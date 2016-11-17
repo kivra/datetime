@@ -31,7 +31,7 @@ next_day_non_weekend(Date0) ->
 random_date_between(D0, D1, gaussian) ->
   do_random_date_between(D0, D1, fun gaussian:zero_to_one/0);
 random_date_between(D0, D1, uniform) ->
-  do_random_date_between(D0, D1, fun random:uniform/0).
+  do_random_date_between(D0, D1, fun rand:uniform/0).
 
 %%%_ * Internals -------------------------------------------------------
 day_loop({Ymd0,Hms}, F) ->

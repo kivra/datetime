@@ -15,8 +15,8 @@
 %% Result is two new independent random numbers which have a
 %% Gaussian distribution with zero mean and a standard deviation of one.
 basic() ->
-  X1 = random:uniform(),
-  X2 = random:uniform(),
+  X1 = rand:uniform(),
+  X2 = rand:uniform(),
   Y1 = math:sqrt(-2.0 * math:log(X1)) * math:cos(2.0 * math:pi() * X2),
   Y2 = math:sqrt(-2.0 * math:log(X1)) * math:sin(2.0 * math:pi() * X2),
   {Y1, Y2}.
@@ -25,8 +25,8 @@ basic() ->
 %% Gaussian distribution with zero mean and a standard deviation of one.
 box_muller() ->
   F = fun() ->
-          X1 = 2.0 * random:uniform() - 1.0,
-          X2 = 2.0 * random:uniform() - 1.0,
+          X1 = 2.0 * rand:uniform() - 1.0,
+          X2 = 2.0 * rand:uniform() - 1.0,
           W  = X1 * X1 + X2 * X2,
           {X1, X2, W}
       end,
